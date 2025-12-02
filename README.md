@@ -474,7 +474,7 @@ gst-launch-1.0 nvarguscamerasrc ! 'video/x-raw(memory:NVMM),width=1920,height=10
 source venv/bin/activate
 
 # USB相机测试
-python 01_camera_basics/camera_capture.py --source 0
+python 01_camera_cap/camera_capture.py --source 0
 
 # 预期输出:
 # 相机已打开:
@@ -504,7 +504,7 @@ ffplay /dev/video0
 
 **准备工作:**
 
-1. 打印标定板:使用`02_camera_calibration/generate_pattern.py`生成
+1. 打印标定板:使用`02_image_pre/generate_pattern.py`生成
 
 ```bash
 python 02_camera_calibration/generate_pattern.py \
@@ -586,7 +586,7 @@ python 02_camera_calibration/chessboard_calibration.py \
 **准备YOLO模型:**
 
 ```bash
-cd 04_object_detection/tensorrt_optimization
+cd 03_object_det/tensorrt_optimization
 
 # 步骤1: 下载预训练模型
 wget https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s.pt
@@ -613,7 +613,7 @@ python tensorrt_build.py \
 **运行检测:**
 
 ```bash
-cd 04_object_detection
+cd 03_object_det
 
 # 实时检测
 python yolo_tensorrt.py \
@@ -639,7 +639,7 @@ python yolo_tensorrt.py \
 ### 4. 人体姿态估计
 
 ```bash
-cd 05_pose_estimation
+cd 04_pose_estimation
 
 # MediaPipe姿态估计
 python mediapipe_pose.py --camera 0
@@ -662,7 +662,7 @@ python face_landmarks.py --camera 0
 # 确保已source ROS2环境
 source /opt/ros/humble/setup.bash
 
-cd 06_ros2_integration
+cd 05_ros2_integration
 
 # 启动相机发布节点
 python camera_publisher.py \
