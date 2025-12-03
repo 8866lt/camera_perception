@@ -1,0 +1,11 @@
+camera_publisher:
+  ros__parameters:
+    device_id: 0
+    frame_rate: 30
+    width: 1280
+    height: 720
+    camera_name: 'camera'
+    camera_info_path: ''
+    undistort: false
+    publish_compressed: true
+    jpeg_quality: 80
