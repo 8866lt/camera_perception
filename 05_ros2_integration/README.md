@@ -175,9 +175,6 @@ colcon build --packages-select my_node
 
 编辑对应的`config/*.yaml`文件,然后重启节点。
 
-## License
-
-MIT
 
 ## 贡献
 
